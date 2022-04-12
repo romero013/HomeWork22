@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-template <typename T> void PowPow(T* pn, T n);
+template <typename T> void PowPow(T* pn, T a);
 
 int main() {
 	setlocale(LC_ALL, "Russian");
@@ -32,9 +32,11 @@ int main() {
 	return 0;
 }
 // Задача 2. Возведение в степень
-template <typename T> void PowPow(T* pn, T n) {
-	int m = 1;
-	for (int i = 0; i < n; i++)
-		m *= *pn;
-	cout << m;
+template <typename T> void PowPow(T* pn, T a) {
+	int b = *pn;
+	if (a == 0)
+		*pn = 1;
+	for (int i = 1; i < a; i++)
+		*pn *= b;
+	cout << *pn;
 }
